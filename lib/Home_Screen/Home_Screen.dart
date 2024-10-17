@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:islamy/Home_Screen/Taps/QuranTap.dart';
+import 'package:islamy/Home_Screen/Taps/TasbeehTap.dart';
+
+import 'Taps/AhadethTap.dart';
+import 'Taps/RadioTap.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({super.key});
@@ -10,7 +15,12 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int currentIndex = 0 ;
-
+  List<Widget> taps = [
+    QuranTap(),
+    AhadethTap(),
+    TasbeehTap(),
+    RadioTap()
+  ];
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -36,6 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
             BottomNavigationBarItem(backgroundColor: Theme.of(context).colorScheme.primary,icon: ImageIcon(AssetImage("Assets/images/radio_blue.png")),label: "Radio" )
           ]
           ),
+          body: taps[currentIndex],
       ),
     );
   }

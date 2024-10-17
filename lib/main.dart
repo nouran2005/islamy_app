@@ -45,6 +45,10 @@ class MyApp extends StatelessWidget {
           ),
           
         ),
+        dividerTheme: DividerThemeData(
+          color: Color(0xffB7935F),
+          thickness: 2,
+        ),
         useMaterial3: true
       ),
       initialRoute: MyHomePage.routeName,
