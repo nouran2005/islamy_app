@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'Home_Screen/Home_Screen.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -10,20 +12,48 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Islamy',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+        scaffoldBackgroundColor: Colors.transparent,
+        bottomNavigationBarTheme:const BottomNavigationBarThemeData(
+          unselectedIconTheme: IconThemeData(
+            color: Colors.white,
+            size: 30,
+            ),
+            selectedIconTheme:  IconThemeData(
+            color: Colors.black,
+            size: 30,
+            ),
+            selectedItemColor:  Colors.black,
+            unselectedItemColor: Colors.white,
+        ),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.deepPurple,
+          primary: Color(0xffB7935F),
+          secondary: Color(0xffB7935F).withOpacity(0.57),
+          onPrimary: Colors.white,
+          onSecondary: Colors.black
+          ),
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          titleTextStyle: TextStyle(
+            fontSize: 30,
+            color: Colors.black,
+            fontWeight: FontWeight.bold
+          ),
+          
+        ),
+        useMaterial3: true
       ),
-      home: const MyHomePage(),
+      initialRoute: MyHomePage.routeName,
+      routes: {
+        MyHomePage.routeName:(_)=> MyHomePage()
+      },
+        
+      
     );
   }
 }
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
-  }
-}
