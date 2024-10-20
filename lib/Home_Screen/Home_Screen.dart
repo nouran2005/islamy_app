@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islamy/Home_Screen/Taps/QuranTap.dart';
 import 'package:islamy/Home_Screen/Taps/TasbeehTap.dart';
-
 import 'Taps/AhadethTap.dart';
 import 'Taps/RadioTap.dart';
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-
 import 'Home_Screen/Home_Screen.dart';
+import 'quran_details/quran_details.dart';
 
 void main() {
   runApp(const MyApp());
@@ -49,11 +49,18 @@ class MyApp extends StatelessWidget {
           color: Color(0xffB7935F),
           thickness: 2,
         ),
+        cardTheme: CardTheme(
+          margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+                    color: Colors.white.withOpacity(0.6),
+          surfaceTintColor: Colors.white.withOpacity(0.2),
+          elevation: 30
+        ),
         useMaterial3: true
       ),
       initialRoute: MyHomePage.routeName,
       routes: {
-        MyHomePage.routeName:(_)=> MyHomePage()
+        MyHomePage.routeName:(_)=> MyHomePage(),
+        QuranDetailsScreen.routeName:(_) => QuranDetailsScreen(),
       },
         
       
